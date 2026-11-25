@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: numshift
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /
+    envVars:
+      - key: PORT
+        value: "10000"
+      - key: EXPORT_DIR
+        value: /tmp/numshift-exports
